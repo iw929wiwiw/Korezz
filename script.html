@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>عرض السكربت</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>🔐 أدخل كلمة السر لعرض السكربت</h2>
+    <input type="password" id="password" placeholder="أدخل كلمة السر">
+    <button onclick="checkPassword()">دخول</button>
+    <p id="error" style="color:red;"></p>
+    <pre id="scriptOutput" style="display:none;"></pre>
+  </div>
+  <script>
+    const password = "11320009";
+    const scriptText = `getgenv().BrainrotConfig = {
+  ["Garama And Madundung"] = true,
+  ["La Grande Combinasion"] = true,
+  ["Graipuss Medussi"] = true,
+  ["Los Tralaleritos"] = true,
+  ["Sammyni Spyderini"] = true,
+  ["La Vacca Saturno Saturnita"] = true,
+  ["Trenostruzzo Turbo 3000"] = true,
+  ["Matteo"] = true,
+  ["Odin Din Din Dun"] = true,
+  ["Tralalero Tralala"] = true,
+  ["Unclito Samito"] = true,
+  ["Girafa Celestre"] = true,
+  ["Cocofanto Elefanto"] = true
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/iw929wiwiw/Secret-Only/refs/heads/main/Secret%20Finder"))();`;
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      const error = document.getElementById("error");
+      if (input === password) {
+        document.getElementById("scriptOutput").style.display = "block";
+        document.getElementById("scriptOutput").textContent = scriptText;
+        error.textContent = "";
+      } else {
+        error.textContent = "❌ كلمة السر غير صحيحة!";
+      }
+    }
+  </script>
+</body>
+</html>
